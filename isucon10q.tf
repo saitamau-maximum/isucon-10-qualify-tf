@@ -48,7 +48,7 @@ data "sakuracloud_archive" "ubuntu" {
 resource "sakuracloud_disk" "isucon10q" {
   count = 3
 
-  name = "${var.app_name}-${count.index + 1}"
+  name = "${var.app_name}-s${count.index + 1}"
   zone = var.zone
 
   size              = 20
