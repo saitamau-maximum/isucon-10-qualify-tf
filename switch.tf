@@ -1,4 +1,4 @@
 resource "sakuracloud_switch" "isucon10q-switch" {
-  name     = "isucon10q"
+  name     = var.switch_name
   zone     = var.zone
 }

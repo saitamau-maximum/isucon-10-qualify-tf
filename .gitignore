@@ -7,4 +7,5 @@
 
 # .tfvars files
 *.tfvars
+!example.tfvars
 .env.sh
