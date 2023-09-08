@@ -15,7 +15,7 @@ resource "sakuracloud_server" "isucon10q" {
 
   core   = 1
   memory = 2
-  disks  = [sakuracloud_disk.isucon10q.id]
+  disks  = [sakuracloud_disk.isucon10q[count.index].id]
 
   network_interface {
     upstream = sakuracloud_switch.isucon10q-switch.id
