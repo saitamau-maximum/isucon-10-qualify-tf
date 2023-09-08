@@ -35,7 +35,7 @@ data "sakuracloud_archive" "ubuntu" {
   zone = var.zone
 
   filter {
-    names = ["Ubuntu Server 18.04", "(cloudimg)"]
+    names = ["Ubuntu Server 22.04 LTS 64bit (cloudimg)"]
   }
 }
 
@@ -50,6 +50,7 @@ resource "sakuracloud_disk" "isucon10q" {
 data "http" "cloud-config-source" {
   url = "https://raw.githubusercontent.com/matsuu/cloud-init-isucon/main/isucon10q/isucon10q.cfg"
 }
+
 locals {
   cloud-config = replace(data.http.cloud-config-source.body, "#cloud-config", "")
 }
