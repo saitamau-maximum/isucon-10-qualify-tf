@@ -41,7 +41,7 @@ data "sakuracloud_archive" "ubuntu" {
   zone = var.zone
 
   filter {
-    names = ["Ubuntu Server 22.04 LTS 64bit (cloudimg)"]
+    names = ["Ubuntu Server 20.04 LTS 64bit (cloudimg)"]
   }
 }
 
