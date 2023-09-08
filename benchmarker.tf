@@ -36,7 +36,7 @@ resource "sakuracloud_disk" "isucon10q-benchmarker" {
 }
 
 data "http" "benchmarker-cloud-config-source" {
-  url = "https://raw.githubusercontent.com/matsuu/cloud-init-isucon/main/isucon10q/benchmarker.cfg"
+  url = "https://raw.githubusercontent.com/matsuu/cloud-init-isucon/main/isucon10q/isucon10q.cfg"
 }
 
 locals {
