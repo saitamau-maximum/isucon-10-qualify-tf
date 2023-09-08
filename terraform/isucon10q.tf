@@ -56,7 +56,7 @@ resource "sakuracloud_disk" "isucon10q" {
 }
 
 data "http" "cloud-config-source" {
-  url = "https://raw.githubusercontent.com/matsuu/cloud-init-isucon/main/isucon10q/isucon10q.cfg"
+  url = "https://raw.githubusercontent.com/saitamau-maximum/isucon-10-qualify-tf/main/cloud-init/competitor.cfg"
 }
 
 locals {
