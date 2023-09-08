@@ -17,7 +17,7 @@ while read line
 do
     echo $line
     ssh -i ~/.ssh/isucon ubuntu@$line "sudo touch /etc/netplan/01-netcfg.yaml"
-    ssh -i ~/.ssh/isucon ubuntu@$line "sudo echo \"network:
+    ssh -i ~/.ssh/isucon ubuntu@$line "sudo sh -c \"echo \"
   ethernets:
     ens4:
       addresses:
@@ -26,7 +26,7 @@ do
       dhcp6: 'no'
   renderer: networkd
   version: 2
-\" > /etc/netplan/01-netcfg.yaml"
+\" > /etc/netplan/01-netcfg.yaml\" "
     ssh -i ~/.ssh/isucon ubuntu@$line "sudo netplan apply"
     echo "$line $num" >> log.txt
     #numは2,3,4,5を循環する
