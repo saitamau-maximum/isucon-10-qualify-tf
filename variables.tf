@@ -13,3 +13,7 @@ variable "app_name" {
 variable "switch_name" {
   default = "isucon10q-switch"
 }
+
+variable "benchmarker_name" {
+  default = "isucon10q-benchmarker"
+}
