@@ -17,7 +17,7 @@ resource "sakuracloud_server" "isucon10q" {
   disks  = [sakuracloud_disk.isucon10q.id]
 
   network_interface {
-    upstream = "shared"
+    upstream = sakuracloud_switch.isucon10q-switch.id
   }
 
   user_data = join("\n", [
