@@ -10,12 +10,16 @@ terraform {
 resource "sakuracloud_server" "isucon10q" {
   count = 3
 
-  name  = "${var.app_name}-s${count.index + 1}"
-  zone  = var.zone
+  name = "${var.app_name}-s${count.index + 1}"
+  zone = var.zone
 
   core   = 1
   memory = 2
   disks  = [sakuracloud_disk.isucon10q[count.index].id]
+
+  network_interface {
+    upstream = "shared"
+  }
 
   network_interface {
     upstream = sakuracloud_switch.isucon10q-switch.id
