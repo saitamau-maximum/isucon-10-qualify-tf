@@ -32,6 +32,29 @@ terraform apply -var-file=envs/<your_env_name>.tfvars
 
 ただし、実行には環境変数として`SAKURACLOUD_ACCESS_TOKEN`と`SAKURACLOUD_ACCESS_TOKEN_SECRET`が必要です。
 
+### benchmarkerのIPアドレスを取得する
+
+数分後、SSHでログインできるようになるので、以下のコマンドでbenchmarkerのIPアドレスを取得してください。
+
+```sh
+terraform output benchmarker_ip_address
+```
+
+### benchmarkerにログインする
+
+```sh
+ssh -i <your_private_key_path> ubuntu@<benchmarker_ip_address>
+```
+
+### benchmarkerでappのsystemdを破棄する
+
+```sh
+sudo systemctl stop    isuumo.go.service
+sudo systemctl disable isuumo.go.service
+```
+
+これをやらないと、benchmarkerがappを起動してしまうため、パフォーマンスに影響が出る可能性があります。
+
 ### terraformを破棄する
 
 ```sh
