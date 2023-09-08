@@ -2,8 +2,8 @@ resource "sakuracloud_server" "isucon10q-benchmarker" {
   name = var.benchmarker_name
   zone = var.zone
 
-  core   = 1
-  memory = 16
+  core   = 2
+  memory = 4
   disks  = [sakuracloud_disk.isucon10q-benchmarker.id]
 
   network_interface {
