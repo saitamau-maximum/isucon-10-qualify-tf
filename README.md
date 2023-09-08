@@ -14,6 +14,14 @@ benchmarker_name = ""
 app_name         = ""
 ```
 
+### variables.tfのpublic_key_pathを書き換える
+
+```terraform
+variable "public_key_path" {
+  default = "<your_public_key_path>"
+}
+```
+
 ### terraformを実行する
 
 ```sh
