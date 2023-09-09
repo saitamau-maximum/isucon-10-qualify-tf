@@ -10,3 +10,5 @@
 !example.tfvars
 .env.sh
 ip.txt
+key.txt
+*.pub
