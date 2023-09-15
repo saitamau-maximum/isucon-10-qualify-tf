@@ -1,5 +1,7 @@
 # ISUCON10予選をさくらのクラウドでやるためのterraform
 
+Based on: https://github.com/yamamoto-febc/sacloud-terraform-isucon
+
 ## 使い方
 
 ### envs/*.tfvarsを作って必要な情報を書く
