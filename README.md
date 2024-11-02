@@ -34,6 +34,21 @@ terraform apply -var-file=envs/<your_env_name>.tfvars
 
 ただし、実行には環境変数として`SAKURACLOUD_ACCESS_TOKEN`と`SAKURACLOUD_ACCESS_TOKEN_SECRET`が必要です。
 
+### netplanを使ってプライベートIPを設定する
+
+`./script/netplan.sh`にプライベートIPを設定するスクリプトがあります。
+
+`./script/ip.txt`を作成して、マシンのIPを1行に1つずつ書き、以下のコマンドを実行してください。
+
+```sh
+sh ./script/netplan.sh
+```
+
+実行すると、`./script/ip.txt`に書かれたIPアドレスに対して`192.168.0.2`, `192.168.0.3`... というようにプライベートIPが設定されます。
+
+プライベートIPがわからなくなったら、直接SSHでログインして`ip a`を実行してください。
+これをしないとプライベートネットワーク内で通信ができません。
+
 ### benchmarkerのIPアドレスを取得する
 
 数分後、SSHでログインできるようになるので、以下のコマンドでbenchmarkerのIPアドレスを取得してください。
