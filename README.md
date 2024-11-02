@@ -63,4 +63,12 @@ sudo systemctl disable isuumo.go.service
 terraform destroy -var-file=envs/<your_env_name>.tfvars
 ```
 
+### サーバー構築が終わっているかの確認
+
+sshをして以下のコマンドでDONEが出ているか見る
+
+```sh
+sudo tail -f /var/log/cloud-init-output.log
+```
+
 「ISUCON」は、LINE株式会社の商標または登録商標です。
